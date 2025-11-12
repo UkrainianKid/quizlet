@@ -6,21 +6,20 @@
   <title>Галерея фото</title>
   <style>
     body {
-      margin: 10px 20px 0 20px; /* зверху 10px, з боків 20px, знизу 0 */
-      background: #000;          /* чорний фон */
+      margin: 10px 20px 0 20px; /* зверху 10px, з боків 20px */
+      background: #6a0dad;      /* фіолетовий фон */
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 10px;                 /* невелика відстань між фото */
-      flex-wrap: wrap;           /* на вузьких екранах під одне під інше */
+      justify-content: space-between; /* фото розтягнуті рівномірно */
+      align-items: stretch;           /* розтягнути по висоті контейнера */
+      height: calc(100vh - 10px);    /* повна висота без відступу зверху */
     }
 
     img {
-      max-width: 48vw;           /* щоб дві влазили поруч */
-      height: auto;              /* зберігає пропорції */
-      object-fit: contain;       /* фото повністю видно */
+      width: 49%;          /* дві фото поруч майже всю ширину */
+      height: 100%;        /* займає всю висоту контейнера */
+      object-fit: contain; /* видно повністю, без обрізання */
+      border-radius: 12px; /* округлі кути */
       display: block;
-      border-radius: 12px;       /* округлі кути */
     }
   </style>
 </head>
