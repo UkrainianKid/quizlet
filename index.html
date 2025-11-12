@@ -1,53 +1,24 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fullscreen Two Images</title>
-<style>
-  body {
-    margin: 0;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: calc(100vw - 200px); /* по 100px з кожного боку */
-    gap: 100px;
-  }
-  img {
-    max-height: calc(100vh - 200px);
-    object-fit: contain;
-    border-radius: 8px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фото на весь екран</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: black;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFRUXGCIWFxgXGR0XGBsYHxsfHRgYGh0YHSggGRolHRgYITEhJSkrLi4uGB8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIARgAtAMBIgACEQEDEQH/xAAbAAACMwEBAQAAAAAAAAAAAAAABQMEBgIHAf/EAEQQAAIBAgQCBAMFBwMFAAAAAAECAwARBBIhMQVBUQYiYXGBEzKhscHR8BRCUnLhFBUjM2KiwcIkQ1Oi/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAIxEBAAICAgEEAwEAAAAAAAAAAAECERIhAzEEEyJREzJRgf/aAAwDAQACEQMRAD8A..." alt="Left Image">
-    <img src="https://via.placeholder.com/400x400/222/fff?text=Right+Image" alt="Right Image">
-  </div>
-
-<script>
-  // автоматичний запит на повноекранний режим
-  document.addEventListener("click", () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(err => {
-        console.warn("Fullscreen failed:", err);
-      });
-    }
-  });
-  
-  // одразу спробувати активувати fullscreen (працює в деяких браузерах)
-  window.onload = () => {
-    document.documentElement.requestFullscreen().catch(() => {});
-  };
-</script>
+  <img src="photo.jpg" alt="Full screen photo">
 </body>
 </html>
