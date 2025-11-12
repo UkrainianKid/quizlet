@@ -15,14 +15,17 @@
 
   .gallery-wrapper {
     padding: 20px 10px; /* відступи зверху/знизу та збоку */
-    height: calc(100vh - 40px); /* висота враховує відступи зверху/знизу */
+    height: calc(100vh - 40px); /* віднімаємо відступи зверху та знизу */
     box-sizing: border-box;
+    display: flex;
+    align-items: center; /* центрує вертикально галерею */
   }
 
   .gallery {
     display: flex;
     gap: 0; /* між фото немає відстані */
-    height: 100%;
+    width: 100%;
+    height: 100%; 
   }
 
   .gallery img {
